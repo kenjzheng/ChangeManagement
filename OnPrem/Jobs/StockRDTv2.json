@@ -1,0 +1,393 @@
+{
+  "Job": {
+    "Uid": "977a9a4e-3410-4e8c-aac9-7faadaba5969",
+    "Name": "StockRDTv2",
+    "IsEnabled": true,
+    "Description": "If your Revenue Detail Trending model uses a single fact table:  RevenueDetail, call RDT1v1 at the end of the StockRevenueDetailTrending job.  If  your Revenue Detail Trending model uses 3 fact tables (Work Detail, Bill Detail & Receipt Detail), call StockRDTv2 at the end of StockRevenueDetailTrending. ",
+    "Target": {
+      "Name": "DW_Datamart"
+    },
+    "Schema": "dbo",
+    "RunStatus": null,
+    "Steps": [
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "Revenue Detail Multifact Card View - Time Cost and Charge",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "Revenue Detail Multifact Card View - Time Cost and Charge",
+          "Uid": "f9275b24-535c-4188-a47e-bf52f5c0576a"
+        },
+        "Uid": "78cb5eda-19e9-474d-8876-0b49792165ee",
+        "OrderPosition": 1
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "Matter Originating Timekeeper Split Work Transformation",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "Matter Originating Timekeeper Split Work Transformation",
+          "Uid": "bbd23bce-bd4e-4208-b914-c2a381d9e29b"
+        },
+        "Uid": "2288b86d-6a5b-4647-831f-3ea03521fc11",
+        "OrderPosition": 2
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "Revenue Detail Multifact Bill View - Time Cost and Charge",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "Revenue Detail Multifact Bill View - Time Cost and Charge",
+          "Uid": "25eec6fe-93dd-4f06-b49a-48d8409d1c12"
+        },
+        "Uid": "3d59e4be-2534-46bc-871c-da75497a38cf",
+        "OrderPosition": 3
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "Matter Originating Timekeeper Split BILLTransformation",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "Matter Originating Timekeeper Split BILLTransformation",
+          "Uid": "d20b4273-c136-4975-baaf-1f98fb9545f8"
+        },
+        "Uid": "a9b3692a-389d-4f15-b713-876ff42cc34b",
+        "OrderPosition": 4
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "Revenue Detail Multifact Receipt View - Time Cost and Charge",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "Revenue Detail Multifact Receipt View - Time Cost and Charge",
+          "Uid": "288ff83e-1ee0-4044-a799-db8be87a2e38"
+        },
+        "Uid": "8d5c48c4-d63e-4279-9656-789f807b0e8b",
+        "OrderPosition": 5
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "Matter Originating Timekeeper Split Receipt Transformation",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "Matter Originating Timekeeper Split Receipt Transformation",
+          "Uid": "2b306dd2-0073-4baa-980e-53e5e0ba3165"
+        },
+        "Uid": "6bbc9636-3d45-4236-920a-d469fd15edb4",
+        "OrderPosition": 6
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "Matter Originating Timekeeper Split WORK View",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "Matter Originating Timekeeper Split WORK View",
+          "Uid": "ffc907a2-0a6c-45cb-a955-ddb321a56869"
+        },
+        "Uid": "e399621d-2636-449e-8acc-2d7b87c985ed",
+        "OrderPosition": 7
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "Matter Originating Timekeeper Split Bill View",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "Matter Originating Timekeeper Split Bill View",
+          "Uid": "0bbefa4f-c181-4ae1-9bfb-9679e46e8019"
+        },
+        "Uid": "308cae5a-df09-4e97-bc3a-174f21140057",
+        "OrderPosition": 8
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "Matter Originating Timekeeper Split RECEIPT View",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "Matter Originating Timekeeper Split RECEIPT View",
+          "Uid": "68398e89-efe3-40de-8fe8-54d105a5dde0"
+        },
+        "Uid": "f5fcada3-174e-4cfc-84d5-608e86c8c4a6",
+        "OrderPosition": 9
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "MattOrgPrfTkprWork",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "MattOrgPrfTkprWork",
+          "Uid": "8a26a9b7-af38-45db-b335-acbcf4a106bb"
+        },
+        "Uid": "37bcfba9-2488-4ee5-8cb8-d6557a489d4a",
+        "OrderPosition": 10
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "VW_MattOrgPrfTkprWork",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "VW_MattOrgPrfTkprWork",
+          "Uid": "c7b80553-a236-4492-839c-64e98b2d66d0"
+        },
+        "Uid": "562f103f-2e2e-4743-8eaf-9f2cae8edbbe",
+        "OrderPosition": 11
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "MattOrgPrfTkprBill",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "MattOrgPrfTkprBill",
+          "Uid": "cbb3d54b-cf31-4a78-bfa7-cc6f5e771bbc"
+        },
+        "Uid": "863a0d34-f546-4115-969a-c67b4f6a6738",
+        "OrderPosition": 12
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "VW_MattOrgPrfTkprBill",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "VW_MattOrgPrfTkprBill",
+          "Uid": "7dbc6ef3-3849-4c76-9855-fd1e27eb4adc"
+        },
+        "Uid": "b461c9c6-a3a5-41d7-97a6-42a553b2c97b",
+        "OrderPosition": 13
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "MattOrgPrfTkprReceipt",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "MattOrgPrfTkprReceipt",
+          "Uid": "2182f598-7c44-49aa-ae49-287bd6ba3051"
+        },
+        "Uid": "ed7587b4-e7e7-464b-89f1-f46ebdea7bcf",
+        "OrderPosition": 14
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "VW_MattOrgPrfTkprReceipt",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "VW_MattOrgPrfTkprReceipt",
+          "Uid": "6d2ebc96-0e26-4c66-b355-1054e1aaa3ad"
+        },
+        "Uid": "d86b66db-01f9-41a3-9cd5-0baea3d0d3da",
+        "OrderPosition": 15
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "MattOrgPrfSpvTkprWork",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "MattOrgPrfSpvTkprWork",
+          "Uid": "428cd97a-6ba8-42d7-8b40-d9b6cb6ab820"
+        },
+        "Uid": "0d91f776-df43-4333-ab64-3847c5fcab2e",
+        "OrderPosition": 16
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "VW_MattOrgPrfSpvTkprWork",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "VW_MattOrgPrfSpvTkprWork",
+          "Uid": "5ee46399-f349-41ee-857c-245dce5a26c2"
+        },
+        "Uid": "bf2311fc-22a9-4125-bcdc-bc69e56299fe",
+        "OrderPosition": 17
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "MattOrgPrfSpvTkprBill",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "MattOrgPrfSpvTkprBill",
+          "Uid": "cbd1f245-bc41-4340-8280-3c04966f195d"
+        },
+        "Uid": "28836473-40a4-44b1-84a7-f050a4c918a8",
+        "OrderPosition": 18
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "VW_MattOrgPrfSpvTkprBill",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "VW_MattOrgPrfSpvTkprBill",
+          "Uid": "e3ca0dc5-8d78-414d-9374-2cb8ddb68d54"
+        },
+        "Uid": "d0bd875f-aa28-40a6-8260-17e937e26d64",
+        "OrderPosition": 19
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "MattOrgPrfSpvTkprReceipt",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "MattOrgPrfSpvTkprReceipt",
+          "Uid": "9eacd7b4-399f-43c3-8b9b-e3bd452a2142"
+        },
+        "Uid": "bb208ac8-4c4c-48ce-87e9-3c1a33eccef9",
+        "OrderPosition": 20
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
+        "Name": "VW_MattOrgPrfSpvTkprReceipt",
+        "Type": {
+          "Id": 1,
+          "Name": "Transformation"
+        },
+        "Transformation": {
+          "Name": "VW_MattOrgPrfSpvTkprReceipt",
+          "Uid": "07bd1102-ca79-4510-b745-7da09abbe612"
+        },
+        "Uid": "18c88565-5e87-43d1-b268-d83a988f8bf2",
+        "OrderPosition": 21
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.AnalysisServicesCommandStep, EDWConfig.Core",
+        "Server": {
+          "ServerName": "AnalysisServer0"
+        },
+        "Type": {
+          "Id": 3,
+          "Name": "SQL Server Analysis Services Command"
+        },
+        "Name": "TMPerformanceMetrics",
+        "Body": "{\r\n  \"refresh\": {\r\n    \"type\": \"full\",\r\n    \"objects\": [\r\n      {\r\n        \"database\": \"$InstanceNamePrefix$Performance Metrics\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "Uid": "600aa00e-c3a4-4a34-ae18-a368c9c2ff6e",
+        "OrderPosition": 22
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.AnalysisServicesCommandStep, EDWConfig.Core",
+        "Server": {
+          "ServerName": "AnalysisServer0"
+        },
+        "Type": {
+          "Id": 3,
+          "Name": "SQL Server Analysis Services Command"
+        },
+        "Name": "TMRevenueDetailTrendingv2FirmSecurity",
+        "Body": "{\r\n  \"refresh\": {\r\n    \"type\": \"full\",\r\n    \"objects\": [\r\n      {\r\n        \"database\": \"$InstanceNamePrefix$Revenue Detail Trending v2 Firm Security\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "Uid": "30ff4703-80b2-4963-bce7-d772d22d96f2",
+        "OrderPosition": 23
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.AnalysisServicesCommandStep, EDWConfig.Core",
+        "Server": {
+          "ServerName": "AnalysisServer0"
+        },
+        "Type": {
+          "Id": 3,
+          "Name": "SQL Server Analysis Services Command"
+        },
+        "Name": "TMRevenueDetailTrendingv2",
+        "Body": "{\r\n  \"refresh\": {\r\n    \"type\": \"full\",\r\n    \"objects\": [\r\n      {\r\n        \"database\": \"$InstanceNamePrefix$Revenue Detail Trending v2\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "Uid": "ff04ace4-d899-46a5-b6ba-10af450c792f",
+        "OrderPosition": 24
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.AnalysisServicesCommandStep, EDWConfig.Core",
+        "Server": {
+          "ServerName": "AnalysisServer0"
+        },
+        "Type": {
+          "Id": 3,
+          "Name": "SQL Server Analysis Services Command"
+        },
+        "Name": "TMRevenueDetailTrendingv2WTK",
+        "Body": "{\r\n  \"refresh\": {\r\n    \"type\": \"full\",\r\n    \"objects\": [\r\n      {\r\n        \"database\": \"$InstanceNamePrefix$Revenue Detail Trending v2 Working Timekeeper\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "Uid": "8b05016b-51d3-4c9b-815a-1d3c854a19f7",
+        "OrderPosition": 25
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.AnalysisServicesCommandStep, EDWConfig.Core",
+        "Server": {
+          "ServerName": "AnalysisServer0"
+        },
+        "Type": {
+          "Id": 3,
+          "Name": "SQL Server Analysis Services Command"
+        },
+        "Name": "TMRevenueDetailTrendingv2PG",
+        "Body": "{\r\n  \"refresh\": {\r\n    \"type\": \"full\",\r\n    \"objects\": [\r\n      {\r\n        \"database\": \"$InstanceNamePrefix$Revenue Detail Trending v2 Practice Group Security\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "Uid": "fe9ce8e4-5dd7-4728-a1a0-5af4b7a4f03f",
+        "OrderPosition": 26
+      },
+      {
+        "$type": "EDWConfig.Core.Domains.AnalysisServicesCommandStep, EDWConfig.Core",
+        "Server": {
+          "ServerName": "AnalysisServer0"
+        },
+        "Type": {
+          "Id": 3,
+          "Name": "SQL Server Analysis Services Command"
+        },
+        "Name": "TMRevenueDetalTrendingv2BTK",
+        "Body": "{\r\n  \"refresh\": {\r\n    \"type\": \"full\",\r\n    \"objects\": [\r\n      {\r\n        \"database\": \"$InstanceNamePrefix$Revenue Detail Trending v2 Billing Timekeeper Security\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "Uid": "53af288c-2171-4337-a4fe-66d4d85ffc01",
+        "OrderPosition": 27
+      }
+    ]
+  }
+}

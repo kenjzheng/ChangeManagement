@@ -1,0 +1,260 @@
+{
+  "$id": "1",
+  "Transformation": {
+    "$id": "2",
+    "Name": "Activity",
+    "Description": "Activites are used in budgeting/matter planning to detail out work that must be accomplished.  Activities are defined within tasks.   ",
+    "IsScd": false,
+    "IsView": false,
+    "IsStockData": true,
+    "IsAutoGeneratePK": true,
+    "DefaultTableName": "Activity",
+    "Uid": "b8c43806-6e56-47c0-b700-79facbc4ddd8",
+    "Indexes": [
+      {
+        "$id": "3",
+        "Name": "ActivityPK",
+        "Filter": "",
+        "Type": {
+          "Id": 1,
+          "Name": "Clustered"
+        },
+        "IsUnique": true,
+        "IsPrimaryKey": true,
+        "Columns": [
+          {
+            "$id": "4",
+            "Column": {
+              "$id": "5",
+              "$type": "EDWConfig.Core.Domains.TransformationColumn, EDWConfig.Core",
+              "Order": 1,
+              "SourceName": "",
+              "Expression": "",
+              "IsMergeKey": false,
+              "IsCalculated": false,
+              "SourceAlias": null,
+              "Description": "",
+              "IsGroupBy": false,
+              "Name": "ActivityPK",
+              "Type": "int",
+              "IsPrimaryKey": true
+            },
+            "Order": {
+              "Id": 1,
+              "Name": "Desc"
+            },
+            "Position": 1,
+            "Index": {
+              "$ref": "3"
+            }
+          }
+        ],
+        "IncludedColumns": [],
+        "ColumnsString": "ActivityPK",
+        "IncludedColumnsString": ""
+      }
+    ],
+    "Queries": [
+      {
+        "$id": "6",
+        "UnionType": {
+          "Id": 0,
+          "Name": "NONE"
+        },
+        "Transformation": {
+          "$ref": "2"
+        },
+        "Filter": "",
+        "Aliases": [
+          {
+            "$id": "7",
+            "Database": {
+              "$id": "8",
+              "Name": "3E_Replicated"
+            },
+            "Table": {
+              "$id": "9",
+              "Name": "Activity",
+              "Schema": "dbo",
+              "ObjectType": 1,
+              "Title": "dbo.Activity",
+              "FullName": "[dbo].[Activity]"
+            },
+            "Alias": "act",
+            "Title": "Activity (act)",
+            "ObjectType": 1
+          },
+          {
+            "$id": "10",
+            "Database": {
+              "$ref": "8"
+            },
+            "Table": {
+              "$id": "11",
+              "Name": "ActivityList",
+              "Schema": "dbo",
+              "ObjectType": 1,
+              "Title": "dbo.ActivityList",
+              "FullName": "[dbo].[ActivityList]"
+            },
+            "Alias": "al",
+            "Title": "ActivityList (al)",
+            "ObjectType": 1
+          }
+        ],
+        "Columns": [
+          {
+            "$id": "12",
+            "Order": 1,
+            "SourceName": "",
+            "Expression": "",
+            "IsMergeKey": false,
+            "IsCalculated": false,
+            "SourceAlias": null,
+            "Description": "",
+            "IsGroupBy": false,
+            "Name": "ActivityPK",
+            "Type": "int",
+            "IsPrimaryKey": true
+          },
+          {
+            "$id": "13",
+            "Order": 2,
+            "SourceName": "ActivityID",
+            "Expression": "",
+            "IsMergeKey": true,
+            "IsCalculated": false,
+            "SourceAlias": {
+              "$ref": "7"
+            },
+            "Description": "Globally unique Identifier for each row.  (unique across tables)",
+            "IsGroupBy": false,
+            "Name": "ActivityID",
+            "Type": "uniqueidentifier",
+            "IsPrimaryKey": false
+          },
+          {
+            "$id": "14",
+            "Order": 3,
+            "SourceName": "Code",
+            "Expression": "",
+            "IsMergeKey": false,
+            "IsCalculated": false,
+            "SourceAlias": {
+              "$ref": "7"
+            },
+            "Description": "short identifier for each activity--not necessarily unique.  ",
+            "IsGroupBy": false,
+            "Name": "ActivityCode",
+            "Type": "nvarchar(10)",
+            "IsPrimaryKey": false
+          },
+          {
+            "$id": "15",
+            "Order": 4,
+            "SourceName": "Description",
+            "Expression": "",
+            "IsMergeKey": false,
+            "IsCalculated": false,
+            "SourceAlias": {
+              "$ref": "7"
+            },
+            "Description": "Long name/description for the activity",
+            "IsGroupBy": false,
+            "Name": "Activity",
+            "Type": "nvarchar(64)",
+            "IsPrimaryKey": false
+          },
+          {
+            "$id": "16",
+            "Order": 5,
+            "SourceName": "ActivityList",
+            "Expression": "",
+            "IsMergeKey": true,
+            "IsCalculated": false,
+            "SourceAlias": {
+              "$ref": "7"
+            },
+            "Description": "In each PTA Group, the firm selects a phase list, a task list, and/or an activity list.  These lists contain phases, tasks, and activities respectively.   ActivityListCode is the short name for the list. ",
+            "IsGroupBy": false,
+            "Name": "ActivityListCode",
+            "Type": "nvarchar(16)",
+            "IsPrimaryKey": false
+          },
+          {
+            "$id": "17",
+            "Order": 6,
+            "SourceName": "Description",
+            "Expression": "",
+            "IsMergeKey": false,
+            "IsCalculated": false,
+            "SourceAlias": {
+              "$ref": "10"
+            },
+            "Description": "In each PTA Group, the firm selects a phase list, a task list, and/or an activity list.  These lists contain phases, tasks, and activities respectively.   ActivityList is the name for the list. ",
+            "IsGroupBy": false,
+            "Name": "ActivityList",
+            "Type": "nvarchar(64)",
+            "IsPrimaryKey": false
+          },
+          {
+            "$id": "18",
+            "Order": 7,
+            "SourceName": "IsBilled",
+            "Expression": "",
+            "IsMergeKey": false,
+            "IsCalculated": false,
+            "SourceAlias": {
+              "$ref": "7"
+            },
+            "Description": "Indicates whether the activity is generally billable.  This has no operational effect; i.e., it is information only. ",
+            "IsGroupBy": false,
+            "Name": "IsBilled",
+            "Type": "tinyint",
+            "IsPrimaryKey": false
+          }
+        ],
+        "Joins": [
+          {
+            "$id": "19",
+            "LeftTable": {
+              "$ref": "7"
+            },
+            "RightTable": {
+              "$ref": "10"
+            },
+            "JoinType": {
+              "Id": 1,
+              "Name": "INNER JOIN"
+            },
+            "Query": {
+              "$ref": "6"
+            },
+            "Order": 1,
+            "Conditions": [
+              {
+                "$id": "20",
+                "LeftTable": {
+                  "$ref": "7"
+                },
+                "LeftColumn": "ActivityList",
+                "RightColumn": "Code",
+                "Operator": {
+                  "Id": 1,
+                  "Name": "="
+                },
+                "IsCalculatedRightColumn": false,
+                "Join": {
+                  "$ref": "19"
+                }
+              }
+            ],
+            "LeftTableName": "Activity (act)",
+            "RightTableName": "ActivityList (al)",
+            "ConditionsString": "(act.ActivityList = al.Code)"
+          }
+        ]
+      }
+    ]
+  }
+}
