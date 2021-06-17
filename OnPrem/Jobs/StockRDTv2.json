@@ -14,7 +14,7 @@
         "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
         "Name": "Revenue Detail Multifact Card View - Time Cost and Charge",
         "Type": {
-          "Id": 999,
+          "Id": 1,
           "Name": "Transformation"
         },
         "Transformation": {
@@ -42,7 +42,7 @@
         "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
         "Name": "Revenue Detail Multifact Bill View - Time Cost and Charge",
         "Type": {
-          "Id": 1,
+          "Id": 888,
           "Name": "Transformation"
         },
         "Transformation": {
