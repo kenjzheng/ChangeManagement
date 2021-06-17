@@ -28,7 +28,7 @@
         "$type": "EDWConfig.Core.Domains.TransformationJobStep, EDWConfig.Core",
         "Name": "Matter Originating Timekeeper Split Work Transformation",
         "Type": {
-          "Id": 888,
+          "Id": 88888,
           "Name": "Transformation"
         },
         "Transformation": {
